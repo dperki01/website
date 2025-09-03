@@ -1,0 +1,147 @@
+/*     SIDEBAR      */
+#sidebar {
+    width: 20vw;
+    height: 100vh;
+    background-color: #090faf;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  
+  /* Profile image + name */
+  
+  .intro-image h2 {
+    font-size: 30px;
+    text-align: left;
+    padding-left: 10%;
+    font-family: "Gill Sans", sans-serif;
+    margin: 0;
+  }
+  
+  /* Links sections */
+  .links-one, .links-two {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 10px 0;
+    width: 80%;
+    text-align: left;
+  }
+  
+  .links-one a, .links-two a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 4px;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+    font-family: "Gill Sans", sans-serif;
+  }
+  
+  .links-one a:hover, .links-two a:hover {
+    text-decoration: underline;   
+  }
+
+/* -------------------------------------------- */
+/* CARD */
+
+  .card {
+    width: 50vw; 
+    margin: 2rem;             /* keeps it responsive */
+    padding: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    background: white;        /* card background */
+    border-radius: 12px;      /* rounded corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* drop shadow */
+    transition: transform 0.3s ease;
+  }
+  
+  .card h1 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #090faf;
+  }
+
+  .card h3 {
+    color: #090faf;
+  }
+
+  .card p {
+    color: #0c79bd;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+/* -------------------------------------------- */
+
+/*     ABOUT      */
+#about {
+    margin-left: 25vw;
+    padding: 10px;
+    width: 60vw;
+    align-items: left;
+    font-family: "Gill Sans", sans-serif;
+}
+
+#about .image {
+  max-width: 200px;
+  width: 100%;
+  border-radius: 10%;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+#about .image:hover {
+  transform: scale(1.05);
+}
+
+/* Image itself */
+#about .image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* -------------------------------------------- */
+
+  /*  SKILLS  */
+  #training {
+    margin-left: 25vw;
+    padding: 10px;
+    width: 60vw;
+    align-items: left;
+    font-family: "Gill Sans", sans-serif;
+}
+
+/* -------------------------------------------- */
+
+  /*  EXPERIENCE  */
+
+  #work {
+    margin-left: 25vw;
+    padding: 10px;
+    width: 60vw;
+    align-items: left;
+    font-family: "Gill Sans", sans-serif;
+}
+
+/* -------------------------------------------- */
+
+#proj {
+    margin-left: 25vw;
+    padding: 10px;
+    width: 60vw;
+    align-items: left;
+    font-family: "Gill Sans", sans-serif;
+}
