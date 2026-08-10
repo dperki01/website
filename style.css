@@ -609,6 +609,192 @@ a {
 
 
 /* =========================
+   LEADERSHIP & INVOLVEMENT
+========================= */
+
+.involvement-section {
+    padding: 100px 30px;
+
+    background: var(--cream);
+}
+
+.involvement-list {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.involvement-card {
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    gap: 30px;
+
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.involvement-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(23, 76, 69, 0.08);
+}
+
+
+/* Year */
+
+.involvement-year {
+    color: var(--blue);
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    padding-top: 4px;
+}
+
+
+/* Main content */
+
+.involvement-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-bottom: 12px;
+}
+
+.involvement-content h3 {
+    color: var(--dark-green);
+
+    font-size: 1.3rem;
+
+    margin-bottom: 2px;
+}
+
+.organization-type {
+    color: var(--muted);
+
+    font-size: 0.85rem;
+}
+
+
+/* Icon */
+
+.involvement-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: var(--light-green);
+
+    color: var(--green);
+
+    font-size: 1.1rem;
+}
+
+.involvement-card:nth-child(2) .involvement-icon {
+    background: var(--light-blue);
+
+    color: var(--blue);
+}
+
+.involvement-card:nth-child(3) .involvement-icon {
+    background: #edf0d9;
+
+    color: var(--dark-green);
+}
+
+
+/* Role */
+
+.role {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 12px;
+
+    color: var(--green);
+
+    font-size: 0.9rem;
+}
+
+.role span {
+    color: #a5b9b5;
+}
+
+.involvement-content > p {
+    color: var(--muted);
+
+    font-size: 0.95rem;
+
+    max-width: 650px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .involvement-section {
+        padding: 70px 20px;
+    }
+
+    .involvement-card {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        padding: 25px;
+    }
+
+    .involvement-year {
+        order: 1;
+    }
+
+    .involvement-content {
+        order: 2;
+    }
+
+    .involvement-top {
+        align-items: center;
+    }
+}
+
+
+/* =========================
    FOOTER
 ========================= */
 
