@@ -9,6 +9,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<!-- Resume Popup -->
+<div id="resumeModal" class="resume-modal">
+
+    <div class="resume-modal-content">
+
+        <button class="close-resume" onclick="closeResume()">
+            &times;
+        </button>
+
+        <iframe
+            src="resume.pdf"
+            title="Resume"
+        ></iframe>
+
+    </div>
+
+</div>
+
 <body>
 
     <!-- Navigation -->
@@ -60,7 +78,7 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="#resume" class="button primary">
+                    <a href="#resume" class="button primary" onclick="openResume()">
                         View Resume
                     </a>
 
@@ -226,12 +244,8 @@
         <section class="involvement-section" id="involvement">
 
             <div class="section-heading">
-                <p class="eyebrow">CAMPUS & COMMUNITY</p>
                 <h2>Leadership &amp; Involvement</h2>
-                <p>
-                    Organizations, communities, and roles that have shaped my
-                    experience outside the classroom.
-                </p>
+                
             </div>
 
             <div class="involvement-list">
@@ -349,7 +363,7 @@
 
         <!-- Projects -->
         <section class="projects-section">
-            <h2>Projects</h2>
+            <h2>Projects &amp; Art </h2>
 
             <div class="project-grid">
 
@@ -430,9 +444,6 @@
 
         </section>
 
-        <section class="contact-section">
-            
-        </section>
     </main>
 
 
