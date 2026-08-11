@@ -417,14 +417,15 @@ a {
 ========================= */
 
 .experience-section {
+    padding: 100px 30px;
+    background: white;
+}
+
+.experience-grid {
     max-width: 1100px;
 
     margin: 0 auto;
 
-    padding: 100px 30px;
-}
-
-.experience-grid {
     display: grid;
 
     grid-template-columns:
@@ -434,32 +435,102 @@ a {
 }
 
 .experience-card {
-    padding: 30px;
-
-    background: white;
+    padding: 32px;
 
     border: 1px solid var(--border);
 
     border-radius: var(--radius);
+
+    background: var(--cream);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
+
+.experience-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(23, 76, 69, 0.08);
+}
+
+
+/* Experience icon */
+
+.experience-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 14px;
+
+    background: var(--light-green);
+
+    color: var(--green);
+
+    font-size: 1.3rem;
+}
+
+
+/* Different colors for each card */
+
+.experience-card:nth-child(2) .experience-icon {
+    background: var(--light-blue);
+
+    color: var(--blue);
+}
+
+.experience-card:nth-child(3) .experience-icon {
+    background: #edf0d9;
+
+    color: var(--dark-green);
+}
+
+
+/* Date */
 
 .experience-number {
     color: var(--blue);
 
-    font-weight: 800;
+    font-weight: 700;
 
     font-size: 0.8rem;
 
-    margin-bottom: 35px;
+    margin-bottom: 8px;
 }
+
+
+/* Job title */
 
 .experience-card h3 {
     color: var(--dark-green);
 
-    font-size: 1.3rem;
+    font-size: 1.25rem;
 
-    margin-bottom: 12px;
+    margin-bottom: 5px;
 }
+
+
+/* Organization */
+
+.experience-organization {
+    color: var(--green);
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    margin-bottom: 18px;
+}
+
+
+/* Description */
 
 .experience-card p {
     color: var(--muted);
@@ -469,22 +540,60 @@ a {
     margin-bottom: 20px;
 }
 
+
+/* Tags */
+
 .experience-tags {
     display: flex;
 
     flex-wrap: wrap;
 
-    gap: 7px;
-
-    margin-bottom: 25px;
+    gap: 8px;
 }
 
+.experience-tags span {
+    padding: 7px 11px;
+
+    border-radius: 999px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    color: var(--green);
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+}
+
+
+/* Link */
+
 .experience-link {
+    display: inline-block;
+
+    margin-top: 20px;
+
     color: var(--green);
 
     font-weight: 700;
 
     font-size: 0.9rem;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .experience-section {
+        padding: 70px 30px;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 
