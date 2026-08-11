@@ -418,7 +418,7 @@ a {
 
 .experience-section {
     padding: 0px 30px;
-    padding-bottom: 25px;
+    padding-bottom: 50px;
     background: white;
 }
 
@@ -601,111 +601,47 @@ a {
 
 
 /* =========================
-   PROJECTS
+   PROJECTS - HORIZONTAL SCROLL
 ========================= */
 
-.projects-section {
+.project-grid {
     max-width: 1100px;
 
     margin: 0 auto;
 
-    padding: 100px 30px;
-}
-
-.project-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 22px;
-}
-
-.project-card {
-    padding: 30px;
-
-    background: white;
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius);
-}
-
-.project-number {
-    color: var(--blue);
-
-    font-weight: 800;
-
-    font-size: 0.8rem;
-
-    margin-bottom: 35px;
-}
-
-.project-card h3 {
-    color: var(--dark-green);
-
-    font-size: 1.3rem;
-
-    margin-bottom: 12px;
-}
-
-.project-card p {
-    color: var(--muted);
-
-    font-size: 0.95rem;
-
-    margin-bottom: 20px;
-}
-
-.project-tags {
     display: flex;
 
-    flex-wrap: wrap;
+    gap: 22px;
 
-    gap: 7px;
+    overflow-x: auto;
 
-    margin-bottom: 25px;
+    scroll-behavior: smooth;
+
+    padding: 10px 5px 25px;
+
+    scrollbar-width: thin;
 }
 
-.project-link {
-    color: var(--green);
-
-    font-weight: 700;
-
-    font-size: 0.9rem;
+/* Keep the cards their original size */
+.project-card {
+    flex: 0 0 340px;
 }
 
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-section {
-    margin: 20px auto 100px;
-
-    max-width: 850px;
-
-    padding: 80px 30px;
-
-    text-align: center;
-
-    background: var(--light-blue);
-
-    border-radius: 35px;
+/* Hide the ugly default scrollbar on WebKit */
+.project-grid::-webkit-scrollbar {
+    height: 8px;
 }
 
-.contact-section h2 {
-    color: var(--dark-green);
+.project-grid::-webkit-scrollbar-track {
+    background: var(--light-green);
 
-    font-size: 2.5rem;
-
-    margin-bottom: 12px;
+    border-radius: 999px;
 }
 
-.contact-section > p:not(.eyebrow) {
-    color: var(--muted);
+.project-grid::-webkit-scrollbar-thumb {
+    background: var(--green);
 
-    margin-bottom: 28px;
+    border-radius: 999px;
 }
 
 
@@ -720,14 +656,15 @@ a {
 }
 
 .involvement-list {
-    max-width: 900px;
+    max-width: 1100px;
 
     margin: 0 auto;
 
-    display: flex;
-    flex-direction: column;
+    display: grid;
 
-    gap: 18px;
+    grid-template-columns: 1fr;
+
+    gap: 22px;
 }
 
 .involvement-card {
