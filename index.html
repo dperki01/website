@@ -9,24 +9,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<!-- Resume Popup -->
-<div id="resumeModal" class="resume-modal">
-
-    <div class="resume-modal-content">
-
-        <button class="close-resume" onclick="closeResume()">
-            &times;
-        </button>
-
-        <iframe
-            src="resume.pdf"
-            title="Resume"
-        ></iframe>
-
-    </div>
-
-</div>
-
 <body>
 
     <!-- Navigation -->
@@ -40,7 +22,7 @@
                 <a href="#skills">Skills &amp; Experience</a>
                 <a href="#involvement">Campus Involvement</a>
                 <a href="#projects">Projects &amp; Art</a>
-                <a href="#contact">Contact</a>
+                <a href="mailto:dylperkins6@gmail.com">Contact</a>
             </div>
 
         </div>
@@ -78,11 +60,11 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="#resume" class="button primary" onclick="openResume()">
+                    <button class="button primary" onclick="openResume()">
                         View Resume
-                    </a>
+                    </button>
 
-                    <a href="#contact" class="button secondary">
+                    <a href="mailto:dylperkins6@gmail.com" class="button secondary">
                         Get in Touch
                     </a>
                 </div>
@@ -96,7 +78,6 @@
         <section class="info-section" id="skills">
 
             <div class="section-heading">
-                <p class="eyebrow">WHAT I DO</p>
                 <h2>Skills &amp; Experience</h2>
             </div>
 
@@ -172,10 +153,8 @@
 
             </div>
 
-        </section>
+            <!-- EXPERIENCE -->
 
-        <!-- Experience -->
-        <section class="experience-section">
             <h2>Experience</h2>
             <div class="experience-grid">
 
@@ -237,6 +216,7 @@
 
                 </article>
             </div>
+
         </section>
 
 
@@ -362,7 +342,7 @@
 
 
         <!-- Projects -->
-        <section class="projects-section">
+        <section class="projects-section" id="projects">
             <h2>Projects &amp; Art </h2>
 
             <div class="project-grid">
