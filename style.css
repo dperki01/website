@@ -418,6 +418,7 @@ a {
 
 .experience-section {
     padding: 0px 30px;
+    padding-bottom: 25px;
     background: white;
 }
 
@@ -431,7 +432,7 @@ a {
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
 
     gap: 22px;
 }
