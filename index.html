@@ -441,5 +441,43 @@
 
     </footer>
 
+    <!-- Resume Popup -->
+    <div id="resumeModal" class="resume-modal">
+
+        <div class="resume-modal-content">
+
+            <button class="close-resume" onclick="closeResume()">
+                &times;
+            </button>
+
+            <iframe src="resume.pdf" title="Resume"></iframe>
+
+        </div>
+
+    </div>
+
+    <script>
+    function openResume() {
+        document.getElementById("resumeModal").style.display = "flex";
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeResume() {
+        document.getElementById("resumeModal").style.display = "none";
+        document.body.style.overflow = "";
+    }
+
+    document.getElementById("resumeModal").addEventListener("click", function(event) {
+        if (event.target === this) {
+            closeResume();
+        }
+    });
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            closeResume();
+        }
+    });
+    </script>
 </body>
 </html>

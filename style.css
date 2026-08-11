@@ -202,7 +202,7 @@ a {
 
     font-weight: 600;
 
-    color: var(--green);
+    color: var(--muted);
 
     margin-bottom: 22px;
 }
@@ -410,30 +410,6 @@ a {
 
 .interest-list li:last-child {
     border-bottom: none;
-}
-
-
-/* Resume */
-
-.resume-card {
-    background: var(--dark-green);
-}
-
-.resume-card h3,
-.resume-card p {
-    color: white;
-}
-
-.resume-card p {
-    opacity: 0.8;
-
-    margin-bottom: 25px;
-}
-
-.resume-link {
-    color: #b9e5d8;
-
-    font-weight: 700;
 }
 
 /* =========================
