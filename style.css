@@ -277,7 +277,6 @@ a {
     letter-spacing: -0.03em;
 
     margin-bottom: 10px;
-    margin-top: 10px;
 }
 
 .section-heading p:last-child {
@@ -420,6 +419,14 @@ a {
 .experience-section {
     padding: 100px 30px;
     background: white;
+}
+
+.experience-section .section-heading {
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: 0 auto 50px;
 }
 
 .experience-grid {
