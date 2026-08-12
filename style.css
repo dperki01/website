@@ -819,9 +819,12 @@ a {
    PROJECT SCROLL
 ========================= */
 
+/* =========================
+   PROJECT CARDS
+========================= */
+
 .project-grid {
     display: flex;
-
     gap: 22px;
 
     overflow-x: auto;
@@ -835,7 +838,110 @@ a {
 
 .project-card {
     flex: 0 0 340px;
+
+    padding: 32px;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--cream);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
+
+.project-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(23, 76, 69, 0.08);
+}
+
+
+/* Number */
+
+.project-number {
+    color: var(--blue);
+
+    font-weight: 800;
+
+    font-size: 0.8rem;
+
+    margin-bottom: 35px;
+}
+
+
+/* Title */
+
+.project-card h3 {
+    color: var(--dark-green);
+
+    font-size: 1.25rem;
+
+    margin-bottom: 12px;
+}
+
+
+/* Description */
+
+.project-card p {
+    color: var(--muted);
+
+    font-size: 0.95rem;
+
+    margin-bottom: 20px;
+}
+
+
+/* Tags */
+
+.project-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+}
+
+.project-tags span {
+    padding: 7px 11px;
+
+    border-radius: 999px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    color: var(--green);
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+}
+
+
+/* Link */
+
+.project-link {
+    color: var(--green);
+
+    font-weight: 700;
+
+    font-size: 0.9rem;
+
+    text-decoration: none;
+}
+
+.project-link:hover {
+    color: var(--dark-green);
+}
+
+
+/* Scrollbar */
 
 .project-grid::-webkit-scrollbar {
     height: 7px;
