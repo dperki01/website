@@ -793,6 +793,8 @@ a {
 .project-category {
     max-width: 1100px;
 
+    padding: 50px 30px;
+
     margin: 0 auto 65px;
 }
 
