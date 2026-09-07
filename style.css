@@ -113,6 +113,8 @@ a {
     width: 32px;
     height: 32px;
     object-fit: contain;
+    position: relative;
+    top: -2px;
 }
 
 /* =========================
