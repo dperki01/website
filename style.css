@@ -161,7 +161,7 @@ a {
 .eyebrow {
     color: var(--blue);
 
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     font-weight: 800;
 
     letter-spacing: 0.14em;
@@ -235,6 +235,9 @@ a {
 
     font-weight: 700;
 
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .button:hover {
