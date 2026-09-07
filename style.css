@@ -235,9 +235,6 @@ a {
 
     font-weight: 700;
 
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
 }
 
 .button:hover {
@@ -248,7 +245,7 @@ a {
     background: var(--dark-green);
     color: white;
 
-    
+    box-shadow: 0 8px 20px rgba(23, 76, 69, 0.15);
 }
 
 .button.secondary {
