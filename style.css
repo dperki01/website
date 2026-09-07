@@ -161,7 +161,7 @@ a {
 .eyebrow {
     color: var(--blue);
 
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     font-weight: 800;
 
     letter-spacing: 0.14em;
@@ -248,7 +248,7 @@ a {
     background: var(--dark-green);
     color: white;
 
-    box-shadow: 0 8px 20px rgba(23, 76, 69, 0.15);
+    
 }
 
 .button.secondary {
