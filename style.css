@@ -103,6 +103,17 @@ a {
     color: var(--green);
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
 
 /* =========================
    HERO
