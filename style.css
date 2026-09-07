@@ -137,7 +137,7 @@ a {
 
     background: var(--light-green);
 
-    border-radius: 45% 45% 22px 22px;
+    border-radius: 16px 16px 16px 16px;
 
     padding: 12px;
 
@@ -150,7 +150,7 @@ a {
 
     object-fit: cover;
 
-    border-radius: 40% 40% 16px 16px;
+    border-radius: 16px 16px 16px 16px;
 
     transform: rotate(2deg);
 }
