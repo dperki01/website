@@ -235,6 +235,9 @@ a {
 
     font-weight: 700;
 
+    border: none;
+    outline: none;
+
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
