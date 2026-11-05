@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800;900&family=Archivo:wdth,wght@62..125,100..900&family=Syne:wght@400..800&display=swap');
 
 /* ===========================================
    PALETTE + FONTS  (change everything here)
@@ -11,16 +11,15 @@
   --terracotta: #F2542D;
   --espresso: #562C2C;
 
-    --font-display: 'Alexandria', 'Arial Rounded MT Bold', system-ui, sans-serif;
+  --font-display: 'Alexandria', 'Arial Rounded MT Bold', system-ui, sans-serif;
   --font-hand: 'Syne', system-ui, sans-serif;
   --font-body: 'Archivo', system-ui, sans-serif;
 
   --line: 4px;               /* hand-drawn line thickness */
   --gutter: clamp(1.25rem, 5vw, 3rem);
   --grain: 0.4;              /* how grainy the background is (0 = none, 1 = heavy) */
+  --blob: 26px 34px 22px 30px / 30px 22px 34px 26px;   /* wonky rounded corners */
 }
-
-
 
 /* ===========================================
    BASICS
@@ -28,18 +27,6 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
-
-.section-title,
-.contact__title {
-  font-weight: 700;
-  -webkit-text-stroke: 0;
-}
-.name, .nav a, .bubble h3, .skills__label,
-.entry h3, .card h4, .contact__links a {
-  font-weight: 800;                          /* Baloo's max */
-  -webkit-text-stroke: 0.04em currentColor;  /* extra thickness that scales with text size */
-  paint-order: stroke fill;
-}
 
 body {
   position: relative;
@@ -75,11 +62,28 @@ ul { list-style: none; }
   font-weight: 800;
 }
 
-.section-title {
+/* ===========================================
+   THICK TEXT
+   All the big blocky text uses Alexandria at 900.
+   =========================================== */
+.name, .section-title, .section-heading h2, .nav a, .bubble h3, .skills__label,
+.entry h3, .card h4, .contact__title, .contact__links a,
+.involvement-card h3, .involvement__card h4 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-synthesis-weight: none;   /* never fake-bold */
+}
+
+/* a touch of extra outline on the chunky bits, scales with text size */
+.name, .nav a, .skills__label, .entry h3, .card h4, .contact__links a {
+  -webkit-text-stroke: 0.02em currentColor;
+  paint-order: stroke fill;
+}
+
+.section-title,
+.section-heading h2 {
   position: relative;
   display: inline-block;
-  font-family: var(--font-display);
-  font-weight: 400;
   font-size: clamp(3rem, 10vw, 6rem);
   color: var(--teal);
   line-height: 0.9;
@@ -87,6 +91,30 @@ ul { list-style: none; }
   margin-block-end: 1rem;
 }
 
+/* ===========================================
+   WOBBLE — section titles sway on their own
+   =========================================== */
+@keyframes sway {
+  0%, 100% { rotate: -1.5deg; translate: 0 0; }
+  50%      { rotate: 1.5deg;  translate: 0 -3px; }
+}
+
+.section-title,
+.section-heading h2,
+.about__text h2,
+.projects__col h3,
+.skills__label,
+.contact__title {
+  transform-origin: 50% 60%;
+  animation: sway 5s ease-in-out infinite;
+}
+
+/* stagger them so they don't all move in sync */
+.about__text h2                { animation-duration: 5.6s; animation-delay: -1s;   }
+.projects__col--tech h3        { animation-duration: 4.8s; animation-delay: -2s;   }
+.projects__col--nontech h3     { animation-duration: 5.4s; animation-delay: -3.5s; }
+.skills__label                 { animation-duration: 6s;   animation-delay: -1.5s; }
+.contact__title                { animation-duration: 6.4s; animation-delay: -2.5s; }
 
 /* ===========================================
    FADED COLOR WASHES (soft blurry blobs behind the page)
@@ -139,12 +167,8 @@ ul { list-style: none; }
 main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
 
 /* ===========================================
-   HAND-DRAWN HELPERS
+   CAT GIF DIVIDER
    =========================================== */
-
-
-
-/* long cat gif divider */
 .cat-divider {
   width: 100%;
   min-height: 80px;              /* placeholder height until the gif is in */
@@ -155,7 +179,7 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
 .cat-divider img {
   width: 100%;
   height: auto;
-  animation: wobble 6s ease-in-out infinite;   /* extra slow sway; delete if the gif already wobbles enough */
+  animation: wobble 6s ease-in-out infinite;
 }
 
 .show-slots .cat-divider:not(:has(img)) {
@@ -202,8 +226,6 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
 }
 
 .name {
-  font-family: var(--font-display);
-  font-weight: 400;
   font-size: clamp(4rem, 16vw, 10rem);
   color: var(--teal);
   line-height: 0.88;
@@ -218,7 +240,6 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
   transition: transform 0.25s cubic-bezier(.3, 1.6, .5, 1);
 }
 
-
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -229,7 +250,6 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
 /* sticker-style nav pills */
 .nav a {
   padding: 0.35rem 1.1rem 0.45rem;
-  font-family: var(--font-display);
   font-size: clamp(1.1rem, 3vw, 1.5rem);
   text-decoration: none;
   color: var(--teal);
@@ -305,7 +325,7 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
 .facts span {
   font-weight: 800;
   margin-inline-end: 0.25rem;
-  opacity: 0.85;          /* label slightly softer than the value */
+  opacity: 0.85;
 }
 
 /* ===========================================
@@ -329,14 +349,10 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
   padding: 1.5rem 2.25rem;
   border-radius: 62% 38% 55% 45% / 45% 60% 40% 55%;
   animation: bob 6s ease-in-out infinite, morph 14s ease-in-out infinite;
-  transition: scale 0.25s cubic-bezier(.3, 1.6, .5, 1);
 }
- 
 
 .bubble h3 {
   font-size: clamp(1.25rem, 2.8vw, 1.6rem);
-  font-weight: 700;
-  -webkit-text-stroke: 0;      /* removes the extra-thick stroke */
   margin-block-end: 0.35rem;
 }
 
@@ -346,17 +362,17 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
   line-height: 1.25;
 }
 
-.b1 { grid-area: 1 / 1; background: var(--cyan);       color: var(--cream);    }
-.b2 { grid-area: 1 / 3; background: var(--terracotta); color: var(--cream);  margin-block-start: 3rem; animation-delay: -1.5s; border-radius: 45% 55% 48% 52% / 55% 45% 55% 45%; }
-.b3 { grid-area: 3 / 1; background: var(--wheat);      color: var(--espresso);  margin-block-start: -2rem; animation-delay: -3s; border-radius: 52% 48% 40% 60% / 46% 54% 46% 54%; }
-.b4 { grid-area: 3 / 3; background: var(--teal);       color: var(--cream);    margin-block-start: 1.5rem; animation-delay: -4.5s; border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; }
+.b1 { grid-area: 1 / 1; background: var(--cyan);       color: var(--cream); }
+.b2 { grid-area: 1 / 3; background: var(--terracotta); color: var(--cream);    margin-block-start: 3rem;  animation-delay: -1.5s, -4s; }
+.b3 { grid-area: 3 / 1; background: var(--wheat);      color: var(--espresso); margin-block-start: -2rem; animation-delay: -3s, -8s; }
+.b4 { grid-area: 3 / 3; background: var(--teal);       color: var(--cream);    margin-block-start: 1.5rem; animation-delay: -4.5s, -11s; }
 
+/* center label, no bubble behind it */
 .skills__label {
   grid-area: 2 / 2;
-  padding: 0.4rem 1.6rem 0.5rem;
-  background: var(--cream);
+  padding: 0.4rem 0.5rem;
+  background: none;
   color: var(--cyan);
-  font-family: var(--font-display);
   font-size: clamp(1.6rem, 4vw, 2.3rem);
   line-height: 1.2;
 }
@@ -366,15 +382,19 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
   50%      { translate: 0 -12px; }
 }
 
+@keyframes morph {
+  0%, 100% { border-radius: 62% 38% 55% 45% / 45% 60% 40% 55%; }
+  33%      { border-radius: 45% 55% 48% 52% / 55% 45% 55% 45%; }
+  66%      { border-radius: 55% 45% 40% 60% / 48% 56% 44% 52%; }
+}
+
 /* ===========================================
-   WORK + INVOLVEMENT (tilted, staggered boxes)
+   WORK (boxes + entries)
    =========================================== */
 .box {
   padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 3rem);
-    transition: transform 0.25s cubic-bezier(.3, 1.6, .5, 1), box-shadow 0.2s ease;
-
+  transition: transform 0.25s cubic-bezier(.3, 1.6, .5, 1), box-shadow 0.2s ease;
 }
-
 
 main > .box + .box { margin-block-start: 2.25rem; }
 
@@ -392,6 +412,18 @@ main > .box + .box { margin-block-start: 2.25rem; }
   justify-content: space-between;
   gap: 0 1rem;
   margin-block-end: 0.2rem;
+}
+
+.entry h3 {
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+  color: var(--espresso);
+}
+
+.entry .meta {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 /* ---- bullet points (squiggle dots) ---- */
@@ -434,65 +466,167 @@ main > .box + .box { margin-block-start: 2.25rem; }
   border-radius: 999px;
 }
 
-.entry h3 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 1.35rem;
+/* ===========================================
+   INVOLVEMENT — sticker cards on a dashed timeline
+   (works with both .involvement-card and .involvement__card markup)
+   =========================================== */
+.involvement-list,
+.involvement__list {
+  position: relative;
+  display: grid;
+  gap: 1.75rem;
+  padding-inline-start: 2rem;
+}
+
+/* the dashed timeline */
+.involvement-list::before,
+.involvement__list::before {
+  content: "";
+  position: absolute;
+  inset-block: 1rem;
+  inset-inline-start: 0.5rem;
+  border-inline-start: 3px dashed rgba(14, 149, 148, 0.4);
+}
+
+.involvement-card,
+.involvement__card {
+  --accent: var(--cyan);
+  position: relative;
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.5rem 1.5rem;
+  align-items: start;
+  padding: 1.4rem 1.6rem 1.5rem;
+  background-color: rgba(252, 242, 225, 0.85);
+  border: 3px solid var(--accent);
+  border-radius: var(--blob);
+  box-shadow: 6px 6px 0 var(--accent);
+  transition: transform 0.25s cubic-bezier(.3, 1.6, .5, 1), box-shadow 0.2s ease, background-color 0.25s ease;
+}
+
+.involvement-card:nth-child(even),
+.involvement__card:nth-child(even) {
+  --accent: var(--terracotta);
+  rotate: 0.6deg;
+}
+.involvement-card:nth-child(odd),
+.involvement__card:nth-child(odd) { rotate: -0.6deg; }
+
+/* dot on the timeline for each card */
+.involvement-card::after,
+.involvement__card::after {
+  content: "";
+  position: absolute;
+  top: 1.7rem;
+  inset-inline-start: calc(-2rem + 0.5rem - 0.5rem + 1.5px - 3px);
+  width: 1rem;
+  height: 1rem;
+  background: var(--accent);
+  border: 3px solid var(--cream);
+  border-radius: 60% 40% 55% 45%;
+}
+
+.involvement-card:hover,
+.involvement__card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--accent);
+  background-color: color-mix(in srgb, var(--accent) 12%, var(--cream));
+}
+
+/* year as a tilted sticker */
+.involvement-year,
+.involvement__year {
+  justify-self: start;
+  margin: 0;
+  padding: 0.25rem 0.85rem 0.3rem;
+  font-family: var(--font-hand);
+  font-weight: 800;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--cream);
+  background: var(--accent);
+  border-radius: 999px;
+  rotate: -3deg;
+}
+
+.involvement-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+}
+
+.involvement-card h3,
+.involvement__card h4 {
+  font-size: 1.5rem;
+  line-height: 1.1;
   letter-spacing: -0.01em;
   color: var(--espresso);
 }
 
-.entry .meta {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 700;
-  transform: none;
-}
-
-
-/* ===========================================
-   INVOLVEMENT
-   =========================================== */
-.involvement__list { display: grid; gap: 1.25rem; }
-
-.involvement__card {
-  display: grid;
-  grid-template-columns: 8.5rem 1fr;
-  gap: 0 1.5rem;
-  align-items: start;
-}
-
-.involvement__year {
+.organization-type,
+.involvement__card .meta {
+  margin-block-start: 0.2rem;
   font-family: var(--font-hand);
-  font-size: 1.4rem;
-  line-height: 1.2;
-  color: var(--terracotta);
-  margin: 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--accent);
 }
 
+/* number blob */
+.involvement-icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  aspect-ratio: 1;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 16%, var(--cream));
+  border-radius: 62% 38% 55% 45% / 45% 60% 40% 55%;
+}
+
+/* roles line */
+.role,
 .involvement__roles {
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0 0.6rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem 0;
+  align-items: baseline;
+  gap: 0.2rem 0.5rem;
+  margin: 0.7rem 0 0.7rem;
+  padding: 0;
+  list-style: none;
   color: var(--teal);
+  font-weight: 700;
 }
+
+.role strong,
+.involvement__roles strong {
+  padding: 0.05rem 0.6rem 0.1rem;
+  color: var(--espresso);
+  background: var(--wheat);
+  border-radius: 999px;
+}
+
+.role span:nth-child(even) { color: var(--accent); }
+
 .involvement__roles li + li::before {
   content: "•";
-  margin-inline: 0.6rem;
-  color: var(--terracotta);
+  margin-inline-end: 0.5rem;
+  color: var(--accent);
 }
 
-@media (max-width: 640px) {
-  .involvement__card { grid-template-columns: 1fr; }
-  .involvement__year { margin-block-end: 0.3rem; }
+.involvement-content > p:last-child,
+.involvement__card div > p:last-child {
+  color: var(--espresso);
+  line-height: 1.45;
 }
-
 
 /* ===========================================
-   PROJECTS
+   PROJECTS — two even columns
    =========================================== */
 .projects { position: relative; }
 
@@ -500,37 +634,36 @@ main > .box + .box { margin-block-start: 2.25rem; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.75rem;
+  align-items: start;
 }
 
 .projects__col { display: grid; gap: 1.25rem; align-content: start; }
-.projects__col--nontech { margin-block-start: 1.5rem; }   /* staggered, not lined up */
 
 .projects__col h3 {
   display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 900;
   font-size: 2.8rem;
   line-height: 1;
   justify-self: start;
 }
-.projects__col--tech h3    { color: var(--cyan);    }
-.projects__col--nontech h3 { color: var(--terracotta);   }
+.projects__col--tech h3    { color: var(--cyan); }
+.projects__col--nontech h3 { color: var(--terracotta); }
 
 .card {
+  --accent: var(--cyan);
   display: block;
   padding: 1.25rem 1.5rem 1.35rem;
   text-decoration: none;
-  background: rgba(252, 242, 225, 0.75);
-  transition: background-color 0.25s ease, transform 0.25s ease;
+  background-color: rgba(252, 242, 225, 0.75);
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
-
-.projects__col--nontech .card::before { border-color: var(--cyan); }
+.projects__col--nontech .card { --accent: var(--terracotta); }
 
 .card h4 {
-  font-family: var(--font-display);
-  font-weight: 400;
   font-size: 1.3rem;
   letter-spacing: -0.01em;
   color: var(--teal);
-  margin-block-end: 0;
 }
 
 .card > .meta { margin-block-end: 0.3rem; }
@@ -544,6 +677,7 @@ main > .box + .box { margin-block-start: 2.25rem; }
 
 .card__links a {
   font-family: var(--font-hand);
+  font-weight: 800;
   font-size: 1.3rem;
   color: var(--terracotta);
   text-decoration: none;
@@ -557,10 +691,11 @@ main > .box + .box { margin-block-start: 2.25rem; }
 .card__links a:hover,
 .card__links a:focus-visible { background-size: 100% 3px; }
 
-
-.projects__col--nontech .card:hover,
-.projects__col--nontech .card:focus-visible {
-  background-color: color-mix(in srgb, var(--cream) 14%, #fcf2e1);
+.projects .card:hover,
+.projects .card:focus-visible {
+  transform: translate(-3px, -3px) scale(1.03);
+  box-shadow: 8px 8px 0 var(--accent);
+  background-color: color-mix(in srgb, var(--accent) 14%, var(--cream));
 }
 
 /* ===========================================
@@ -574,14 +709,12 @@ main > .box + .box { margin-block-start: 2.25rem; }
 
 .contact__title {
   display: inline-block;
-  font-family: var(--font-display);
-  font-weight: 400;
   font-size: clamp(4.5rem, 17vw, 10rem);
-  color: var(--teal);
+  color: var(--terracotta);
   line-height: 0.9;
   letter-spacing: -0.03em;
   margin-block-end: 1.25rem;
-  text-shadow: 6px 6px 0 rgba(242, 84, 45, 0.35);
+  text-shadow: 6px 6px 0 rgba(17, 104, 106, 0.3);
 }
 
 .contact__links {
@@ -591,24 +724,33 @@ main > .box + .box { margin-block-start: 2.25rem; }
   gap: 1.1rem;
 }
 
-/* chunky sticker buttons */
+/* chunky sticker buttons, each its own color */
 .contact__links a {
+  --bg: var(--cyan);
+  --fg: var(--cream);
+  --edge: var(--teal);
   padding: 0.55rem 1.6rem 0.65rem;
-  font-family: var(--font-display);
   font-size: 1.45rem;
   text-decoration: none;
-  color: var(--cream);
-  background: var(--cyan);
-  border: 3px solid var(--teal);
+  color: var(--fg);
+  background: var(--bg);
+  border: 3px solid var(--edge);
   border-radius: 999px;
-  box-shadow: 5px 5px 0 var(--teal);
-  transition: background 0.2s ease, transform 0.25s cubic-bezier(.3, 1.6, .5, 1), box-shadow 0.2s ease;
+  box-shadow: 5px 5px 0 var(--edge);
+  transition: transform 0.25s cubic-bezier(.3, 1.6, .5, 1), box-shadow 0.2s ease;
 }
+
+.contact__links li:nth-child(4n+2) a,
+.contact__links > a:nth-child(4n+2) { --bg: var(--terracotta); --edge: var(--espresso); }
+.contact__links li:nth-child(4n+3) a,
+.contact__links > a:nth-child(4n+3) { --bg: var(--wheat); --fg: var(--espresso); --edge: var(--espresso); }
+.contact__links li:nth-child(4n+4) a,
+.contact__links > a:nth-child(4n+4) { --bg: var(--teal); --edge: var(--espresso); }
 
 .contact__links a:hover,
 .contact__links a:focus-visible {
-  transform: rotate(0deg) translate(-2px, -4px) scale(1.06);
-  box-shadow: 8px 8px 0 var(--teal);
+  transform: translate(-2px, -4px) scale(1.06);
+  box-shadow: 8px 8px 0 var(--edge);
 }
 
 /* ===========================================
@@ -618,19 +760,9 @@ main > .box + .box { margin-block-start: 2.25rem; }
   padding-block: 2rem 3rem;
   text-align: center;
   font-family: var(--font-hand);
+  font-weight: 700;
   font-size: 1.5rem;
   color: var(--teal);
-}
-
-/* ===========================================
-   THICK TEXT
-   All the big blocky text asks for weight 900, so even the
-   fallback font (before Archivo Black loads) stays chunky.
-   =========================================== */
-.name, .section-title, .nav a, .bubble h3, .skills__label,
-.entry h3, .card h4, .contact__title, .contact__links a {
-  font-weight: 900;
-  font-synthesis-weight: none;   /* don't fake-bold Archivo Black, it's already thick */
 }
 
 /* ===========================================
@@ -639,8 +771,16 @@ main > .box + .box { margin-block-start: 2.25rem; }
 @media (max-width: 720px) {
   .slot--header { width: 120px; height: 120px; top: auto; bottom: 0; }
   .projects__grid { grid-template-columns: 1fr; }
-  .projects__col--nontech { margin-block-start: 1rem; }
   #work, #involvement { width: 100%; }
+}
+
+@media (max-width: 640px) {
+  .involvement-list,
+  .involvement__list { padding-inline-start: 1.5rem; }
+  .involvement-card,
+  .involvement__card { grid-template-columns: 1fr; rotate: 0deg !important; }
+  .involvement-card::after,
+  .involvement__card::after { inset-inline-start: calc(-1.5rem + 1.5px - 3px); }
 }
 
 @media (max-width: 560px) {
