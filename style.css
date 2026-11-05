@@ -531,11 +531,15 @@ main > .box + .box { margin-block-start: 2.25rem; }
 .card:hover,
 .card:focus-visible {
   transform: translate(-3px, -3px) scale(1.03);
-  box-shadow: 8px 8px 0;
+  box-shadow: 8px 8px 0 var(--cyan);
+  background-color: color-mix(in srgb, var(--cyan) 14%, #fcf2e1);
 }
 
 .projects__col--nontech .card:hover,
-.projects__col--nontech .card:focus-visible { box-shadow: 8px 8px 0; }
+.projects__col--nontech .card:focus-visible {
+  box-shadow: 8px 8px 0 var(--terracotta);
+  background-color: color-mix(in srgb, var(--terracotta) 14%, #fcf2e1);
+}
 
 /* ===========================================
    CONTACT
