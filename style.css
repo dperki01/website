@@ -535,7 +535,7 @@ main > .box + .box { margin-block-start: 2.25rem; }
 }
 
 .projects__col--nontech .card:hover,
-.projects__col--nontech .card:focus-visible { box-shadow: 8px 8px 0 rgba(242, 84, 45, 0.3); }
+.projects__col--nontech .card:focus-visible { box-shadow: 8px 8px 0; }
 
 /* ===========================================
    CONTACT
