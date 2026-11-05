@@ -380,7 +380,7 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
   grid-area: 2 / 2;
   padding: 0.4rem 1.6rem 0.5rem;
   background: var(--cream);
-  border: var(--line) solid var(--teal);
+  
   border-radius: 999px;
   color: var(--teal);
   font-family: var(--font-display);
