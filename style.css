@@ -528,7 +528,6 @@ main > .box + .box { margin-block-start: 2.25rem; }
 
 .involvement-card:hover,
 .involvement__card:hover {
-  transform: translate(-3px, -3px);
   box-shadow: 9px 9px 0 var(--accent);
   background-color: color-mix(in srgb, var(--accent) 12%, var(--cream));
 }
