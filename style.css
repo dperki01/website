@@ -78,24 +78,10 @@ ul { list-style: none; }
   letter-spacing: -0.02em;
   margin-block-end: 1rem;
   transform: rotate(-3deg);
-  isolation: isolate;
-}
-
-.section-title::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 55% -0.25em -0.05em -0.15em;
-  background: var(--wheat);
-  border-radius: 40% 60% 45% 55% / 60% 40% 60% 40%;
-  transform: rotate(2deg);
-  filter: url(#rough);
 }
 
 #involvement .section-title { transform: rotate(2deg); }
-#involvement .section-title::after { background: rgba(242, 84, 45, 0.25); }
 #projects .section-title { transform: rotate(-2deg); }
-#projects .section-title::after { background: rgba(14, 149, 148, 0.25); }
 
 /* ===========================================
    FADED COLOR WASHES (soft blurry blobs behind the page)
