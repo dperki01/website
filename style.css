@@ -317,7 +317,7 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
 
 .facts li {
   padding: 0.3rem 0.9rem;
-  color: #fff;
+  color: var(--espresso);
   border: 2px solid var(--espresso);
   border-radius: 999px;
   font-size: 0.98rem;
