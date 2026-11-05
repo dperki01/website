@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@700;800;900&display=swap');
 
 /* ===========================================
    PALETTE + FONTS  (change everything here)
@@ -11,7 +11,7 @@
   --terracotta: #F2542D;
   --espresso: #562C2C;
 
-    --font-display: 'Baloo Bhaijaan 2', 'Arial Rounded MT Bold', system-ui, sans-serif;
+    --font-display: 'Alexandria', 'Arial Rounded MT Bold', system-ui, sans-serif;
   --font-hand: 'Syne', system-ui, sans-serif;
   --font-body: 'Archivo', system-ui, sans-serif;
 
@@ -19,6 +19,8 @@
   --gutter: clamp(1.25rem, 5vw, 3rem);
   --grain: 0.4;              /* how grainy the background is (0 = none, 1 = heavy) */
 }
+
+
 
 /* ===========================================
    BASICS
