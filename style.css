@@ -316,17 +316,17 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
 }
 
 .facts li {
-  padding: 0.25rem 0.85rem;
-  background: rgba(14, 149, 148, 0.12);
+  padding: 0.3rem 0.9rem;
+  background: var(--terracotta);
+  color: #fff;
   border-radius: 999px;
   font-size: 0.98rem;
 }
 
 .facts span {
-  font-family: var(--font-hand);
-  font-size: 1.15rem;
-  color: var(--terracotta);
+  font-weight: 800;
   margin-inline-end: 0.25rem;
+  opacity: 0.85;          /* label slightly softer than the value */
 }
 
 /* ===========================================
