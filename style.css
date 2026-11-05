@@ -25,8 +25,13 @@
 
 html { scroll-behavior: smooth; }
 
-.name, .section-title, .nav a, .bubble h3, .skills__label,
-.entry h3, .card h4, .contact__title, .contact__links a {
+.section-title,
+.contact__title {
+  font-weight: 700;
+  -webkit-text-stroke: 0;
+}
+.name, .nav a, .bubble h3, .skills__label,
+.entry h3, .card h4, .contact__links a {
   font-weight: 800;                          /* Baloo's max */
   -webkit-text-stroke: 0.04em currentColor;  /* extra thickness that scales with text size */
   paint-order: stroke fill;
@@ -77,11 +82,8 @@ ul { list-style: none; }
   line-height: 0.9;
   letter-spacing: -0.02em;
   margin-block-end: 1rem;
-  transform: rotate(-3deg);
 }
 
-#involvement .section-title { transform: rotate(2deg); }
-#projects .section-title { transform: rotate(-2deg); }
 
 /* ===========================================
    FADED COLOR WASHES (soft blurry blobs behind the page)
@@ -104,7 +106,6 @@ ul { list-style: none; }
   top: -120px; inset-inline-start: -160px;
   width: 760px; height: 520px;
   background: radial-gradient(closest-side, rgba(14,149,148,.42), rgba(14,149,148,0));
-  transform: rotate(-10deg);
 }
 .wash--2 { /* skills area */
   top: 700px; inset-inline-end: -200px;
@@ -192,7 +193,7 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
   border-radius: 18px;
 }
 
-.slot--header   { width: 200px; height: 200px; top: 3rem;  inset-inline-end: 0; transform: rotate(6deg); }
+.slot--header   { width: 200px; height: 200px; top: 3rem;  inset-inline-end: 0;  }
 .slot--skills   { width: 120px; height: 120px; bottom: -1rem; inset-inline-start: 0; }
 .slot--work     { width: 120px; height: 120px; top: -70px; inset-inline-end: 1.5rem; }
 .slot--projects { width: 140px; height: 140px; top: -1rem; inset-inline-end: 0; }
@@ -246,18 +247,12 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
-.nav a:nth-child(1) { transform: rotate(-4deg); }
-.nav a:nth-child(2) { transform: rotate(3deg) translateY(4px); }
-.nav a:nth-child(3) { transform: rotate(-2deg); }
-.nav a:nth-child(4) { transform: rotate(5deg) translateY(3px); }
-
 .nav a:hover,
 .nav a:focus-visible {
   background: var(--terracotta);
   color: var(--cream);
   border-color: var(--espresso);
   box-shadow: 6px 6px 0 var(--espresso);
-  transform: rotate(0deg) translate(-2px, -3px);
 }
 
 /* ===========================================
@@ -278,7 +273,6 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
   font-size: 1.6rem;
   color: var(--cyan);
   overflow: hidden;
-  transform: rotate(-3deg);
 }
 
 .about__photo img {
@@ -294,7 +288,6 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
   color: var(--terracotta);
   line-height: 1;
   margin-block-end: 0.75rem;
-  transform: rotate(-2deg);
 }
 
 .about__text p { font-size: 1.12rem; }
@@ -361,10 +354,10 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
   line-height: 1.25;
 }
 
-.b1 { grid-area: 1 / 1; background: var(--cyan);       color: var(--cream);    rotate: -6deg; }
-.b2 { grid-area: 1 / 3; background: var(--terracotta); color: var(--cream);    rotate: 5deg;  margin-block-start: 3rem; animation-delay: -1.5s; border-radius: 45% 55% 48% 52% / 55% 45% 55% 45%; }
-.b3 { grid-area: 3 / 1; background: var(--wheat);      color: var(--espresso); rotate: 4deg;  margin-block-start: -2rem; animation-delay: -3s; border-radius: 52% 48% 40% 60% / 46% 54% 46% 54%; }
-.b4 { grid-area: 3 / 3; background: var(--teal);       color: var(--cream);    rotate: -4deg; margin-block-start: 1.5rem; animation-delay: -4.5s; border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; }
+.b1 { grid-area: 1 / 1; background: var(--cyan);       color: var(--cream);    }
+.b2 { grid-area: 1 / 3; background: var(--terracotta); color: var(--cream);  margin-block-start: 3rem; animation-delay: -1.5s; border-radius: 45% 55% 48% 52% / 55% 45% 55% 45%; }
+.b3 { grid-area: 3 / 1; background: var(--wheat);      color: var(--espresso);  margin-block-start: -2rem; animation-delay: -3s; border-radius: 52% 48% 40% 60% / 46% 54% 46% 54%; }
+.b4 { grid-area: 3 / 3; background: var(--teal);       color: var(--cream);    margin-block-start: 1.5rem; animation-delay: -4.5s; border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; }
 
 .skills__label {
   grid-area: 2 / 2;
@@ -390,15 +383,6 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
    =========================================== */
 .box {
   padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 3rem);
-}
-
-#work {
-  transform: rotate(-0.6deg);
-}
-
-
-#involvement {
-  transform: rotate(-0.6deg);
 }
 
 main > .box + .box { margin-block-start: 2.25rem; }
@@ -459,9 +443,6 @@ main > .box + .box { margin-block-start: 2.25rem; }
   border-radius: 999px;
 }
 
-.tags li:nth-child(odd)  { rotate: -2deg; }
-.tags li:nth-child(even) { rotate: 2deg; }
-
 .entry h3 {
   font-family: var(--font-display);
   font-weight: 400;
@@ -497,15 +478,14 @@ main > .box + .box { margin-block-start: 2.25rem; }
   line-height: 1;
   justify-self: start;
 }
-.projects__col--tech h3    { color: var(--cyan);       transform: rotate(-4deg); }
-.projects__col--nontech h3 { color: var(--terracotta); transform: rotate(3deg); }
+.projects__col--tech h3    { color: var(--cyan);    }
+.projects__col--nontech h3 { color: var(--terracotta);   }
 
 .card {
   display: block;
   padding: 1.25rem 1.5rem 1.35rem;
   text-decoration: none;
   background: rgba(252, 242, 225, 0.75);
-  transform: rotate(var(--tilt, 0deg));
   transition: transform 0.25s cubic-bezier(.3, 1.6, .5, 1), box-shadow 0.2s ease;
 }
 
@@ -572,7 +552,6 @@ main > .box + .box { margin-block-start: 2.25rem; }
   letter-spacing: -0.03em;
   margin-block-end: 1.25rem;
   text-shadow: 6px 6px 0 rgba(242, 84, 45, 0.35);
-  transform: rotate(-3deg);
 }
 
 .contact__links {
@@ -595,10 +574,6 @@ main > .box + .box { margin-block-start: 2.25rem; }
   box-shadow: 5px 5px 0 var(--espresso);
   transition: background 0.2s ease, transform 0.25s cubic-bezier(.3, 1.6, .5, 1), box-shadow 0.2s ease;
 }
-
-.contact__links a:nth-child(1) { transform: rotate(-5deg); }
-.contact__links a:nth-child(2) { transform: rotate(3deg) translateY(6px); background: var(--terracotta); }
-.contact__links a:nth-child(3) { transform: rotate(-2deg); background: var(--cyan); }
 
 .contact__links a:hover,
 .contact__links a:focus-visible {
