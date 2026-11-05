@@ -490,7 +490,7 @@ main > .box + .box { margin-block-start: 2.25rem; }
   padding: 1.25rem 1.5rem 1.35rem;
   text-decoration: none;
   background: rgba(252, 242, 225, 0.75);
-  transition: transform 0.25s cubic-bezier(.3, 1.6, .5, 1), box-shadow 0.2s ease;
+  transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
 .projects__col--nontech .card::before { border-color: var(--cyan); }
