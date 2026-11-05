@@ -563,8 +563,6 @@ main > .box + .box { margin-block-start: 2.25rem; }
   transition: background-size 0.25s ease;
 }
 
-.card__links a:hover,
-.card__links a:focus-visible { background-size: 100% 3px; }
 
 .card:hover,
 .card:focus-visible {
