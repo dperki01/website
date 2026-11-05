@@ -9,8 +9,8 @@
   --terracotta: #F2542D;
   --espresso: #562C2C;
 
-  --font-display: 'Baloo Bhaijaan 2', sans-serif;
-  --font-hand: 'Syne', sans-serif;
+  --font-display: 'Baloo Bhaijaan 2', 'Arial Rounded MT Bold', system-ui, sans-serif;
+  --font-hand: 'Syne', system-ui, sans-serif;
   --font-body: 'Archivo', system-ui, sans-serif;
 
   --line: 4px;               /* hand-drawn line thickness */
@@ -24,6 +24,13 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
+
+.name, .section-title, .nav a, .bubble h3, .skills__label,
+.entry h3, .card h4, .contact__title, .contact__links a {
+  font-weight: 800;                          /* Baloo's max */
+  -webkit-text-stroke: 0.04em currentColor;  /* extra thickness that scales with text size */
+  paint-order: stroke fill;
+}
 
 body {
   position: relative;
