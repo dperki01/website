@@ -462,6 +462,48 @@ main > .box + .box { margin-block-start: 2.25rem; }
   transform: none;
 }
 
+
+/* ===========================================
+   INVOLVEMENT
+   =========================================== */
+.involvement__list { display: grid; gap: 1.25rem; }
+
+.involvement__card {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0 1.5rem;
+  align-items: start;
+}
+
+.involvement__year {
+  font-family: var(--font-hand);
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: var(--terracotta);
+  margin: 0;
+}
+
+.involvement__roles {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0;
+  color: var(--teal);
+}
+.involvement__roles li + li::before {
+  content: "•";
+  margin-inline: 0.6rem;
+  color: var(--terracotta);
+}
+
+@media (max-width: 640px) {
+  .involvement__card { grid-template-columns: 1fr; }
+  .involvement__year { margin-block-end: 0.3rem; }
+}
+
+
 /* ===========================================
    PROJECTS
    =========================================== */
@@ -537,46 +579,6 @@ main > .box + .box { margin-block-start: 2.25rem; }
 .projects__col--nontech .card:hover,
 .projects__col--nontech .card:focus-visible {
   background-color: color-mix(in srgb, var(--cream) 14%, #fcf2e1);
-}
-
-/* ===========================================
-   INVOLVEMENT
-   =========================================== */
-.involvement__list { display: grid; gap: 1.25rem; }
-
-.involvement__card {
-  display: grid;
-  grid-template-columns: 8.5rem 1fr;
-  gap: 0 1.5rem;
-  align-items: start;
-}
-
-.involvement__year {
-  font-family: var(--font-hand);
-  font-size: 1.4rem;
-  line-height: 1.2;
-  color: var(--terracotta);
-  margin: 0;
-}
-
-.involvement__roles {
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0 0.6rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 0;
-  color: var(--teal);
-}
-.involvement__roles li + li::before {
-  content: "•";
-  margin-inline: 0.6rem;
-  color: var(--terracotta);
-}
-
-@media (max-width: 640px) {
-  .involvement__card { grid-template-columns: 1fr; }
-  .involvement__year { margin-block-end: 0.3rem; }
 }
 
 /* ===========================================
