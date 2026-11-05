@@ -582,7 +582,7 @@ main > .box + .box { margin-block-start: 2.25rem; }
 .contact__links a:hover,
 .contact__links a:focus-visible {
   transform: rotate(0deg) translate(-2px, -4px) scale(1.06);
-  box-shadow: 8px 8px 0 var(--espresso);
+  box-shadow: 8px 8px 0 var(--teal);
 }
 
 /* ===========================================
