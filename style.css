@@ -540,6 +540,56 @@ main > .box + .box { margin-block-start: 2.25rem; }
 }
 
 /* ===========================================
+   INVOLVEMENT
+   =========================================== */
+.involvement__list { display: grid; gap: 1.25rem; }
+
+.involvement__card {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0 1.5rem;
+  align-items: start;
+}
+
+.involvement__year {
+  font-family: var(--font-hand);
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: var(--terracotta);
+  margin: 0;
+}
+
+.involvement__roles {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0;
+  color: var(--teal);
+}
+.involvement__roles li + li::before {
+  content: "•";
+  margin-inline: 0.6rem;
+  color: var(--terracotta);
+}
+
+/* alternate hover colors, matching the projects columns */
+.involvement__card:nth-child(odd):hover {
+  box-shadow: 8px 8px 0 var(--cyan);
+  background-color: color-mix(in srgb, var(--cyan) 14%, #fcf2e1);
+}
+.involvement__card:nth-child(even):hover {
+  box-shadow: 8px 8px 0 var(--terracotta);
+  background-color: color-mix(in srgb, var(--terracotta) 14%, #fcf2e1);
+}
+
+@media (max-width: 640px) {
+  .involvement__card { grid-template-columns: 1fr; }
+  .involvement__year { margin-block-end: 0.3rem; }
+}
+
+/* ===========================================
    CONTACT
    =========================================== */
 .contact {
