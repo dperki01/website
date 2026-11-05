@@ -75,7 +75,6 @@ ul { list-style: none; }
   font-weight: 800;
 }
 
-/* Big tilted titles with a marker swipe behind them */
 .section-title {
   position: relative;
   display: inline-block;
@@ -572,11 +571,11 @@ main > .box + .box { margin-block-start: 2.25rem; }
   font-family: var(--font-display);
   font-size: 1.45rem;
   text-decoration: none;
-  color: var(--cream);
+  color: var(--cyan);
   background: var(--teal);
-  border: 3px solid var(--espresso);
+  border: 3px solid var(--teal);
   border-radius: 999px;
-  box-shadow: 5px 5px 0 var(--espresso);
+  box-shadow: 5px 5px 0 var(--teal);
   transition: background 0.2s ease, transform 0.25s cubic-bezier(.3, 1.6, .5, 1), box-shadow 0.2s ease;
 }
 
