@@ -808,23 +808,13 @@ a {
 .project-category {
     max-width: 1100px;
 
-    padding: 5px 20px;
+    padding: 20px 20px;
 
     margin: 0 auto 65px;
 }
 
 .category-heading {
     margin-bottom: 25px;
-}
-
-.section-heading h2 {
-    color: var(--dark-green);
-
-    font-size: 2.5rem;
-
-    letter-spacing: -0.03em;
-
-    margin-bottom: 10px;
 }
 
 .category-heading h3 {
