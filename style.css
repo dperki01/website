@@ -390,7 +390,6 @@ main > .box + .box { margin-block-start: 2.25rem; }
 .entry + .entry {
   margin-block-start: 1rem;
   padding-block-start: 1rem;
-  border-top: 3px dotted rgba(14, 149, 148, 0.35);
 }
 
 /* title on the left, date on the right */
