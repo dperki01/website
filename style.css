@@ -342,15 +342,14 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
 }
 
 .bubble {
-  width: clamp(170px, 30vw, 245px);
-  aspect-ratio: 1;
+  width: clamp(240px, 36vw, 380px);
+  aspect-ratio: 1.45;                 /* wider than tall */
   display: grid;
   place-content: center;
   text-align: center;
-  padding: 1.5rem;
-  border-radius: 58% 42% 52% 48% / 48% 56% 44% 52%;
-  box-shadow: 0 0 0 12px rgba(14,149,148,.12), 0 0 40px 18px rgba(14,149,148,.12);
-  animation: bob 6s ease-in-out infinite;
+  padding: 1.5rem 2.25rem;
+  border-radius: 62% 38% 55% 45% / 45% 60% 40% 55%;
+  animation: bob 6s ease-in-out infinite, morph 14s ease-in-out infinite;
   transition: scale 0.25s cubic-bezier(.3, 1.6, .5, 1);
 }
 
@@ -406,12 +405,10 @@ main > * + * { margin-block-start: clamp(2.75rem, 6vw, 4rem); }
   transform: rotate(-0.6deg);
 }
 
-#involvement {
-  width: 98%;
-  margin-inline-start: auto;
-  transform: rotate(0.8deg);
-}
 
+#involvement {
+  transform: rotate(-0.6deg);
+}
 
 main > .box + .box { margin-block-start: 2.25rem; }
 
