@@ -493,7 +493,7 @@ main > .box + .box { margin-block-start: 2.25rem; }
   transition: transform 0.25s cubic-bezier(.3, 1.6, .5, 1), box-shadow 0.2s ease;
 }
 
-.projects__col--nontech .card::before { border-color: var(--terracotta); }
+.projects__col--nontech .card::before { border-color: var(--cream); }
 
 .card h4 {
   font-family: var(--font-display);
