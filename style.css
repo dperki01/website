@@ -531,7 +531,7 @@ main > .box + .box { margin-block-start: 2.25rem; }
 .card:hover,
 .card:focus-visible {
   transform: translate(-3px, -3px) scale(1.03);
-  box-shadow: 8px 8px 0 var(--wheat);
+  box-shadow: 8px 8px 0;
 }
 
 .projects__col--nontech .card:hover,
