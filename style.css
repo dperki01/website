@@ -526,7 +526,7 @@ main > .box + .box { margin-block-start: 2.25rem; }
 
 .card:hover,
 .card:focus-visible {
-  transform: rotate(calc(var(--tilt, 0deg) * -1)) scale(1.03) translate(-3px, -3px);
+  transform: translate(-3px, -3px) scale(1.03);
   box-shadow: 8px 8px 0 var(--wheat);
 }
 
