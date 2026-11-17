@@ -14,7 +14,7 @@
   --olive-pale: #EEF2CF;
   --yellow: #EDD54B;
   --text: #22264A;
-  --grey: #2E3036;         /* left rail */
+  --grey: #2E3036;
   --bevel-hi: #FFFFFF;
   --bevel-lo: #7D84A3;
   --win: #E9EDF6;          /* window chrome */
@@ -35,7 +35,10 @@
    =========================================== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7.5rem;   /* nav jumps land below the sticky header */
+}
 
 body {
   min-height: 100vh;
@@ -70,8 +73,15 @@ ul { list-style: none; }
 }
 
 /* ===========================================
-   TOP BAR + TABS + TICKER
+   TOP BAR + TABS + TICKER  (sticky together)
    =========================================== */
+.site-top {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 3px 0 var(--blue-pale);
+}
+
 .topbar {
   display: flex;
   align-items: center;
@@ -149,63 +159,15 @@ ul { list-style: none; }
 }
 
 /* ===========================================
-   LAYOUT: rail · sidebar · main
+   LAYOUT: sidebar · main
    =========================================== */
 .layout {
   display: grid;
-  grid-template-columns: 46px 240px minmax(0, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 1.75rem;
   max-width: 1280px;
   margin: 0 auto;
-  padding-inline-end: 1.25rem;
-}
-
-/* dark left rail */
-.rail {
-  position: sticky;
-  top: 0;
-  align-self: start;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  padding-block: 0.9rem;
-  background: var(--grey);
-}
-
-.rail a {
-  display: grid;
-  place-items: center;
-  width: 30px;
-  aspect-ratio: 1;
-  font-weight: 700;
-  font-size: 0.9rem;
-  text-decoration: none;
-  color: #fff;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  transition: background 0.15s, color 0.15s;
-}
-.rail a:hover,
-.rail a:focus-visible { background: var(--olive-light); color: var(--grey); }
-
-.rail__text {
-  margin-block-start: 1rem;
-  writing-mode: vertical-rl;
-  rotate: 180deg;
-  font-family: var(--font-pixel);
-  font-size: 0.72rem;
-  letter-spacing: 0.25em;
-  color: #D7D9E0;
-}
-
-.rail__dots { display: grid; gap: 0.5rem; margin-block-start: 0.75rem; }
-.rail__dots i {
-  width: 16px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--yellow);
+  padding-inline: 1.25rem;
 }
 
 /* ===========================================
@@ -948,7 +910,6 @@ main {
    =========================================== */
 @media (max-width: 980px) {
   .layout { grid-template-columns: 1fr; padding-inline: 1rem; }
-  .rail { display: none; }
   main { order: 1; }
   .sidebar {
     order: 2;
@@ -969,6 +930,7 @@ main {
   .projects__col--nontech { margin-block-start: 1rem; }
   .tabs a { flex: 1 1 30%; }
   .topbar__path { display: none; }
+  html { scroll-padding-top: 9rem; }
   .bar { background: var(--olive); }
 }
 
