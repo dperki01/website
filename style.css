@@ -8,10 +8,10 @@
   --blue: #6E8FDC;         /* periwinkle */
   --blue-soft: #C8D5F4;
   --blue-pale: #E8EDFA;
-  --olive: #A8B83A;
-  --olive-light: #C9D664;
-  --olive-dark: #66711F;
-  --olive-pale: #EEF2CF;
+  --olive: #45a94a;
+  --olive-light: #8ae480;
+  --olive-dark: rgb(25, 91, 47);
+  --olive-pale: #cff2d5;
   --yellow: #EDD54B;
   --text: #22264A;
   --grey: #2E3036;
