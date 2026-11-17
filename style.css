@@ -285,7 +285,7 @@ main {
   line-height: 1;
   letter-spacing: 0.06em;
   color: var(--blue);
-  background: radial-gradient(circle, var(--blue-pale) 42%, transparent 47%) 0 0 / 10px 10px;
+  background: none;
   transform-origin: 30% 70%;
   animation: sway 5s ease-in-out infinite;
 }
