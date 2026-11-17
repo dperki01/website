@@ -9,14 +9,14 @@
   --blue-soft: #cfc8f4;
   --blue-pale: #cfdef7;
   --olive: #45a94a;
-  --olive-light: #8ae480;
+  --olive-light: #b5ef9f;
   --olive-dark: rgb(25, 91, 47);
   --olive-pale: #cff2d5;
   --yellow: #EDD54B;
   --text: #22264A;
   --grey: #2E3036;
-  --bevel-hi: #FFFFFF;
-  --bevel-lo: #7D84A3;
+  --bevel-hi: #ffffff;
+  --bevel-lo: #417673;
   --win: #E9EDF6;          /* window chrome */
 
   /* Want Letterboxd colors instead? Swap these in:
