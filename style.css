@@ -607,7 +607,49 @@ main {
 /* ===========================================
    WORK
    =========================================== */
-.entry + .entry {
+
+/* ---- "show more jobs" dropdown ---- */
+.more-jobs {
+  margin-block-start: 1.1rem;
+  padding-block-start: 1.1rem;
+  border-top: 2px dotted var(--blue-soft);
+}
+
+.more-jobs summary {
+  display: inline-block;
+  list-style: none;              /* hide the default triangle */
+  cursor: pointer;
+  padding: 0.35rem 0.9rem 0.4rem;
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--text);
+  background: linear-gradient(#FBFCFF, #D6DBE7);
+  border: 2px solid;
+  border-color: var(--bevel-hi) var(--bevel-lo) var(--bevel-lo) var(--bevel-hi);
+  box-shadow: 1px 1px 0 #3A3F5C;
+  user-select: none;
+}
+.more-jobs summary::-webkit-details-marker { display: none; }
+
+.more-jobs summary:hover,
+.more-jobs summary:focus-visible { background: var(--blue-soft); }
+.more-jobs summary:active { border-color: var(--bevel-lo) var(--bevel-hi) var(--bevel-hi) var(--bevel-lo); }
+
+/* swap the button text when open */
+.more-jobs__hide { display: none; }
+.more-jobs[open] .more-jobs__show { display: none; }
+.more-jobs[open] .more-jobs__hide { display: inline; }
+
+.more-jobs__list { margin-block-start: 1.1rem; }
+.more-jobs[open] .more-jobs__list { animation: drop 0.25s ease-out; }
+
+@keyframes drop {
+  from { opacity: 0; translate: 0 -6px; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+   .entry + .entry {
   margin-block-start: 1.1rem;
   padding-block-start: 1.1rem;
   border-top: 2px dotted var(--blue-soft);
