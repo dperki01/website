@@ -339,6 +339,30 @@ main {
   background: #fff;
 }
 
+.hello {
+  position: relative;
+  isolation: isolate;
+  padding-block-start: 1.7rem;
+  margin-block-end: 0.6rem;
+}
+.hello h2 { margin-block-end: 0; }
+
+.hello__ar {
+  position: absolute;
+  top: 0;
+  left: 1.4rem;
+  z-index: -1;
+  margin: 0;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: #45a94a;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
 /* ---- Win98-style window ---- */
 .win {
   --bar-from: var(--ink);
